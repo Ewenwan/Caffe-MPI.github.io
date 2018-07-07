@@ -1,3 +1,43 @@
+# Caffe-MPI是一款分布式集群版本，目前支持GPU集群并行计算，
+  Caffe-MPI(https://github.com/Caffe-MPI/Caffe-MPI.github.io)
+  是一款高性能高可扩展的深度学习计算框架,是由浪潮的HPC应用开发团队进行开发。
+  Caffe-MPI是一款分布式集群版本，目前支持GPU集群并行计算，
+  该版本在伯克利单机单卡GPU版本上进行开发，
+  其单机单卡版本信息参见 (https://github.com/BVLC/caffe, 更多细节可以访问 http://caffe.berkeleyvision.org) 。
+
+
+
+# Caffe-MPI主要特点及优势如下：
+
+　　
+
+##　(1)   基于HPC系统设计
+
+    Caffe-MPI针对HPC系统架构技术设计，硬件系统采用Lustre存储+IB网络+GPU集群，
+    基于Lustre并行存储采用多进程+多线程机制并行读取训练数据，实现较高的IO吞吐；
+    采用IB网络实现高速互联网，实现参数的快速传输和模型更新；
+    采用数据并行机制，利用GPU集群实现大规模训练。软件编程模型采用MPI+ Multi thread+CUDA，
+    节点间采用MPI通信，节点内实现CPU多线程并行和CUDA线程并行。
+
+　　
+
+## (2)   高性能与高可扩展性
+
+    Caffe-MPI可以采用多机多GPU卡同时训练，每秒可以训练2000张图片，
+    较BVLC单GPU卡性能实现大幅提升，并可以部署到大规模训练平台上，
+    实现对大规模数据样本的训练，如Googlenet模型,Caffe-MPI较单GPU版本性能提升16倍以上，
+    并支持24+ GPUs的扩展，并行效率达到72%以上。
+
+　　
+
+## (3)   良好的继承性与易用性
+
+    Caffe-MPI计算框架基于伯克利的Caffe架构进行开发，
+    完全保留了原始Caffe架构的特性和最新功能，并支持最新的cuDNN 5.1，
+    即纯粹的C++/CUDA架构，支持命令行、Python和MATLAB接口等多种编程方式，
+    具备上手快、速度快、模块化、开放性等众多特性，为用户提供了最佳的应用体验。
+
+
 <html lang="en" class=" is-copy-enabled is-u2f-enabled">
 
 <h1><a id="user-content-caffe-mpi-for-deep-learning-------------------------------------------------------------------------" class="anchor" href="#caffe-mpi-for-deep-learning-------------------------------------------------------------------------" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caffe-MPI for Deep Learning                                                                         </h1>
